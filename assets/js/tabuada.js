@@ -9,9 +9,11 @@ function calculaTabuada(){
     tabuada.innerHTML = '';
     //Criando um laço de repetição de 0 a 10
     for (let valorB = 0; valorB <= 10; valorB++) {
+       
         //Calculando o resultado da linha atual
         let resultado = valorA * valorB;
-        //Criando o template das colunas linha autal
+        
+        //Criando o template das colunas linha atual
         let template = `
                 <td>${valorA}</td>
                 <td>x</td>
@@ -19,11 +21,12 @@ function calculaTabuada(){
                 <td>=</td>
                 <td>${resultado}</td>
              `;
+             
         //Criando o elemento tr
         let tr = document.createElement('tr');
         //Inserindo as colunas na tabela
         tr.innerHTML = template;
-        //Inserindo a linha na tabela
+        //Inserindo a linhas na tabela
         tabuada.append(tr);
 
     }//Fechando o for
@@ -32,7 +35,7 @@ function calculaTabuada(){
 //Chamando a nossa função pela primeira vez
 calculaTabuada();
 
-//Adicionado o evento de alteração ao compo numero
+//Adicionado o evento de alteração ao campo numero
 document.querySelector("#valorA").addEventListener('change', e => {
     calculaTabuada();
 })
